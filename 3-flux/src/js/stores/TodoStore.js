@@ -21,7 +21,7 @@ class TodoStore extends EventEmitter {
 
   createTodo(text) {
     const id = Date.now();
-
+    console.log('createTodo called');
     this.todos.push({
       id,
       text,
@@ -53,5 +53,5 @@ class TodoStore extends EventEmitter {
 
 const todoStore = new TodoStore;
 dispatcher.register(todoStore.handleActions.bind(todoStore));
-
+window.dispatcher = dispatcher;
 export default todoStore;

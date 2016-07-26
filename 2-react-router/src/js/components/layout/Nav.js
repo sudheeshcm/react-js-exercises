@@ -44,6 +44,9 @@ export default class Nav extends React.Component {
               <li activeClassName="active">
                 <Link to="settings" onClick={this.toggleCollapse.bind(this)}>Settings</Link>
               </li>
+              <li activeClassName="active">
+                <Link to="killer" onClick={this.toggleCollapse.bind(this)}>Killer</Link>
+              </li>
             </ul>
           </div>
         </div>

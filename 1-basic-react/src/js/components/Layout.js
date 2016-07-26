@@ -3,11 +3,11 @@ import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
-export class Layout extends React.Component {
+class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: "Welcome"
+      title: "Welcome to React Test Page..!!"
     };
   }
 
@@ -19,30 +19,33 @@ export class Layout extends React.Component {
     return (
       <div>
         <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
-        <Footer />
+        
       </div>
     );
   }
 }
 
-export class TitleLayout extends React.Component {
+class TitleLayout extends React.Component {
   constructor() {
     super();
     this.state = {
       titleBackground: "blue",
-      titleContent: "Welcome to React Page..!!"
+      titleContent: "Testing under progress."
     };
   }
   
   setTitleLayout(titleLayout) {
-    this.setState({titleLayout});
+    console.log('titleLayout set');
+    this.setState(titleLayout);
   }
   
   render() {
     return (
     <div id="titleMain">
-      <Footer setTitleLayout={this.setTitleLayout.bind(this)} titleLayout={this.state.titleBackground, this.state.titleContent} />
+      <Footer setTitleLayout={this.setTitleLayout.bind(this)} titleBackground={this.state.titleBackground} titleContent={this.state.titleContent} />
     </div>
     );
   }
 }
+
+export {Layout, TitleLayout};
